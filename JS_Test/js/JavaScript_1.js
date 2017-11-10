@@ -41,3 +41,6 @@ function test_3() {
     }
 }
 
+//NEW FILE !!!!
+document.write("Mcc's Web");
+
