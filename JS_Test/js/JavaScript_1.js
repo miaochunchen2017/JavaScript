@@ -42,19 +42,48 @@ function test_3() {
 }
 
 //NEW FILE !!!!
-document.write("Mcc's Web");
+//document.write("Mcc's Web");
 
 function Type_Json() {
     var JsonObject = {
         "Person":
             [
-                {"Name": "Mcc", "Age": "25", "Sex": "Male"},
-                {"Name": "Zmr", "Age": "25", "Sex": "Female"}
+                {"Name": "Mcc", "Age": 25, "Sex": "Male", "IsMarried": true, "Spouse": null},
+                {"Name": "Zmr", "Age": 25, "Sex": "Female", "IsMarried": true, "Spouse": "Mcc"}
             ]
     };
-    document.getElementById("person_name").innerHTML = JsonObject.Person[1].Name;
-    document.getElementById("person_age").innerHTML = JsonObject.Person[1].Age;
-    document.getElementById("person_sex").innerHTML = JsonObject.Person[1].Sex;
-    //修改Json数据
-    
+
+//修改Json数据
+    JsonObject.Person[0].Name = "MCC";
+    var person_num = 1;
+//     document.getElementById("person_name").innerHTML = JsonObject.Person[person].Name;
+// //打印Json数据
+//     document.getElementById("person_age").innerHTML = JsonObject.Person[person].Age;
+//     document.getElementById("person_sex").innerHTML = JsonObject.Person[person].Sex;
+//     document.getElementById("person_isMarrid").innerHTML = JsonObject.Person[person].IsMarried;
+//     document.getElementById("person_spouse").innerHTML = JsonObject.Person[person]["Spouse"];
+
+//使用for-in来循环对象的属性的值
+    for (var x in JsonObject.Person[person_num]) {
+        document.getElementById("personInformation_p_a").innerHTML += JsonObject.Person[person_num][x] + "<br>";
+    }
 }
+
+//嵌套Json
+function Type_Json_0() {
+    var JsonObject = {
+        "Person": 1,
+        "Name": {
+            "First_Name": "Miao",
+            "Middle_Name": "Chun",
+            "Last_Name": "Chen"
+        }
+        , "Age": 25, "Sex": "Male", "IsMarried": true, "Spouse": null
+
+    };
+
+    document.getElementById("personInformation_p_c").innerHTML = JsonObject.Name["First_Name"];
+//或者写成  document.getElementById("personInformation_p_c").innerHTML = JsonObject.Name.First_Name;
+
+}
+
