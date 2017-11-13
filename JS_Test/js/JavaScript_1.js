@@ -44,3 +44,17 @@ function test_3() {
 //NEW FILE !!!!
 document.write("Mcc's Web");
 
+function Type_Json() {
+    var JsonObject = {
+        "Person":
+            [
+                {"Name": "Mcc", "Age": "25", "Sex": "Male"},
+                {"Name": "Zmr", "Age": "25", "Sex": "Female"}
+            ]
+    };
+    document.getElementById("person_name").innerHTML = JsonObject.Person[1].Name;
+    document.getElementById("person_age").innerHTML = JsonObject.Person[1].Age;
+    document.getElementById("person_sex").innerHTML = JsonObject.Person[1].Sex;
+    //修改Json数据
+    
+}
