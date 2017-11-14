@@ -87,3 +87,16 @@ function Type_Json_0() {
 
 }
 
+function Type_Json_1() {
+    var JsonObject_1 = {
+        "Person": ["Name", "Age", "Sex", "IsMarried", "Spouse"]
+    };
+
+//使用for-in来循环对象的属性的值
+    var p1 = "";
+    for (var s in JsonObject_1.Person) {
+        p1 += JsonObject_1.Person[s] + "<br>";
+    }
+    document.getElementById("personInformation_p_e").innerHTML = p1;
+}
+
