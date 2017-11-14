@@ -1,4 +1,5 @@
 //选择方法运行
+//Updata to GitHub at 16:16 2017-11-14
 
 //弹出提示框
 function fun_alert(a) {
