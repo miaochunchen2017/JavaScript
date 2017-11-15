@@ -100,3 +100,24 @@ function Type_Json_1() {
     document.getElementById("personInformation_p_e").innerHTML = p1;
 }
 
+//循环内嵌数组
+function cycle_array() {
+    var myObj, i, j, x = "";
+    myObj = {
+        "name": "网站",
+        "num": 3,
+        "sites": [
+            {"name": "Google", "info": ["Android", "Google 搜索", "Google 翻译"]},
+            {"name": "Runoob", "info": ["菜鸟教程", "菜鸟工具", "菜鸟微信"]},
+            {"name": "Taobao", "info": ["淘宝", "网购"]}
+        ]
+    }
+
+    for (i in myObj.sites) {
+        x += "<h1>" + myObj.sites[i].name + "</h1>";
+        for (j in myObj.sites[i].info) {
+            x += myObj.sites[i].info[j] + "<br>";
+        }
+    }
+    document.getElementById("example_1").innerHTML = x;
+}

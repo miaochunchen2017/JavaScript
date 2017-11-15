@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Mcc's JavaScript Demo</title>
-    <link rel="stylesheet" href="css/Style_Main.css"/>
-    <script type="text/javascript" src="js/JavaScript_1.js"></script>
-</head>
-<body>
-<p align="center">Mcc's JavaScript Demo</p>
-<div id="personInformation_div">
-    <p id="personInformation_p_d" align="center">
-        Name: <span id="person_name"></span><br/>
-        Age: <span id="person_age"></span><br/>
-        Sex: <span id="person_sex"></span><br/>
-        IsMarried: <span id="person_isMarrid"></span><br/>
-        Spouse: <span id="person_spouse"></span><br/>
-    </p>
-    <p id="personInformation_p_a"></p>
-    <script>
-        Type_Json();
-    </script>
-</div>
-<p id="personInformation_p_c"></p>
-<script>
-    Type_Json_0();
-</script>
-<p id="personInformation_p_e"></p>
-<script>
-    Type_Json_1();
-</script>
+<html lang="en">
 
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>My first program - Mcc</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript" src="js/javascript_01.js"></script>
+	</head>
+
+	<body>
+		<div id="login">
+			<h1 id="title_index">WeLCOME To McC'S WeB</h1>
+			<!--调用fingById函数来查找指定id的元素类型-->
+			<!--<script>findById("title_index")</script>-->
+			<div id="test_div">
+				<button class="but" type="submit" onclick="javascrtpt:window.location.href='Demo.html'">ENTER</button>
+			</div>
+
+			
+		</div>
+		
+		<!--调用firstRealFunction函数通过class来查找元素
+		<script>
+			var elementArray = firstRealFunction("aaaaaaaaa");
+			alert(elementArray);
+		</script>-->
+		
+		<!--调用treeOfDOM函数通过DOM树查找目标元素的父子兄弟元素
+		<script>
+			treeOfDOM("test_div");
+		</script>-->
+		
+		<!--更改body的背景颜色和字体颜色-->
+		<script>
+			changeStyle();
+		</script>
+		
+	</body>
+
 </html>

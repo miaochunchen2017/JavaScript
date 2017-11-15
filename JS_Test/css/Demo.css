@@ -1,0 +1,249 @@
+html {
+    width: 100%;
+    text-align: center;
+    font-style: sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #4A374A;
+    margin: 0;
+}
+
+.text_style_01 {
+    color: #fff;
+    text-shadow: 0 0 10px darkorchid;
+}
+
+.text_style_02 {
+    color: #87CEFA;
+    text-shadow: 0 0 10px darkorchid;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+#gototop {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+}
+
+.but {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    background-color: #4a77d4;
+    border: 1px solid #3762bc;
+    color: #fff;
+    padding: 2px 2px 2px 2px;
+    font-size: 11pt;
+    line-height: normal;
+    border-radius: 5px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/*全局变量*/
+
+div#global {
+    /*设置宽度，设置百分比可以根据浏览器自适应宽度*/
+    width: 100%;
+    /*设置高度，950px是设置是实体高度，不能自适应的*/
+    height: auto;
+    /*设置背景颜色，方便区分布局*/
+    background-color: #4A374A;
+}
+
+/*定义头部布局，前面的div可以不用写，#号前面默认有个id，凡事定义了id的标签，都可以用#号来表示*/
+
+/*头部变量*/
+
+#heading {
+    width: 100%;
+    height: 100px;
+    /*border: dotted azure 2px;*/
+}
+
+/*头部标题*/
+#heading h1 {
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-left: 320px;
+    text-align: left;
+    font-size: 32pt;
+}
+
+/*头部标题*/
+
+/*#heading h1 {
+	letter-spacing: 1px;
+	margin-top: 30px;
+	margin: 30px auto 0 auto;
+	font-size: 32pt;
+}*/
+
+#heading_h1_span {
+    font-style: oblique;
+    color: red;
+}
+
+/*头部图标*/
+
+#heading img {
+    height: 125px;
+    position: absolute;
+    left: 40px;
+    top: 35px;
+}
+
+#Quick_navigation_bar {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 15px;
+    /*border: dotted azure 2px;*/
+}
+
+#QN {
+    width: 80%;
+    float: right;
+    display: flex;
+    list-style-type: none;
+    color: lavenderblush;
+}
+
+#QN li {
+    flex: 1;
+    float: left;
+    height: 24px;
+    font-family: "微软雅黑";
+    border-left: dotted azure 2px;
+}
+
+#QN .a:hover {
+    color: fuchsia;
+    text-decoration: none;
+    border: none;
+    /*border: groove azure 2px;*/
+}
+
+.a {
+    display: block;
+    width: 98%;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.a:hover {
+    color: aqua;
+    text-decoration: none;
+    border-right: groove azure 2px; /*链接按钮边框开关*/
+}
+
+/*左侧导航栏*/
+
+#content_menu {
+    width: 18%;
+    height: auto;
+    /*定义浮动，不定义的话，界面会乱*/
+    float: left;
+    padding: 5px 1% 100px 1%;
+    text-shadow: 0 0 10px darkorchid;
+}
+
+/*左侧导航栏标题*/
+
+#content_menu h2 {
+    font-size: 15pt;
+    letter-spacing: 1px;
+    /*	margin-left: -20px;*/
+    margin-top: 20px;
+    text-align: center;
+}
+
+#content_menu dl {
+    width: 90%;
+    font-size: 10pt;
+    margin: 5px auto;
+}
+
+#content_menu dt {
+    height: 40px;
+    clear: left;
+    float: left;
+    /*设置列表前图片*/
+    /*background:url(../img/icon_01.jpg);*/
+    /*图片平铺方式*/
+    /*background-repeat: repeat-y;*/
+
+    /*overflow: hidden;*/
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+#content_menu dt a {
+    /*空间最大宽度设置为87px*/
+    max-width: 87px;
+    /*超出空间宽度的文本将被隐藏*/
+    overflow: hidden;
+}
+
+#content_menu dd {
+    float: right;
+    margin-left: 5px;
+}
+
+/*正文部分变量*/
+
+#content_body {
+    width: 73%;
+    height: auto;
+    float: right;
+    padding: 5px 3% 20px 3%;
+    border-left: dotted azure 2px;
+    /*border: dotted darksalmon 2px;*/
+}
+
+.content_div {
+    clear: both;
+    width: 98%;
+    min-height: 200px;
+    margin-bottom: 10px;
+    border-bottom: dotted azure 2px;
+}
+
+#content_body_title {
+    float: left;
+    font-size: 15pt;
+}
+
+/*足部上方留白*/
+
+#front_of_floor {
+    clear: both;
+    height: 20px;
+}
+
+/*网页足部*/
+
+#floor {
+    /*删除浮动，不然会被其他的浮动给遮住*/
+    clear: both;
+    height: 250px;
+    padding-bottom: 20px;
+    border-top: dotted chartreuse 2px;
+}
+
+.footer_div {
+    flex: 1;
+    border-left: dotted aliceblue 2px;
+}
+
+.footer_div dt {
+    color: #fff;
+    text-shadow: 0 0 10px darkorchid;
+}
+
+.footer_div dd {
+    margin-left: 0;
+    margin-top: 4px;
+}
