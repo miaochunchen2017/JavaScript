@@ -57,10 +57,13 @@ div#global {
 /*定义头部布局，前面的div可以不用写，#号前面默认有个id，凡事定义了id的标签，都可以用#号来表示*/
 
 /*头部变量*/
+#header {
+    height: 150px;
+}
 
 #heading {
     width: 100%;
-    height: 100px;
+    height: 80px;
     /*border: dotted azure 2px;*/
 }
 
@@ -137,6 +140,13 @@ div#global {
     color: aqua;
     text-decoration: none;
     border-right: groove azure 2px; /*链接按钮边框开关*/
+}
+
+/*网页中部*/
+#content_main {
+    height: auto;
+    width: auto;
+    overflow: hidden;
 }
 
 /*左侧导航栏*/
