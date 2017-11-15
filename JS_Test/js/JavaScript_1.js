@@ -102,22 +102,34 @@ function Type_Json_1() {
 
 //循环内嵌数组
 function cycle_array() {
-    var myObj, i, j, x = "";
-    myObj = {
-        "name": "网站",
-        "num": 3,
-        "sites": [
-            {"name": "Google", "info": ["Android", "Google 搜索", "Google 翻译"]},
-            {"name": "Runoob", "info": ["菜鸟教程", "菜鸟工具", "菜鸟微信"]},
-            {"name": "Taobao", "info": ["淘宝", "网购"]}
+    var goods, info, i, j, x = "";
+    goods = {
+        "name": "milk",
+        "kind": "drink",
+        "brand": [
+            {"name": "三元", "info": ["milk", 500, "$1.99"]},
+            {"name": "蒙牛", "info": ["milk", null, "$1.59"]},
+            {"name": "伊利", "info": ["milk", 600, "$1.09"]}
         ]
     }
 
-    for (i in myObj.sites) {
-        x += "<h1>" + myObj.sites[i].name + "</h1>";
-        for (j in myObj.sites[i].info) {
-            x += myObj.sites[i].info[j] + "<br>";
+    info = ["商品种类：", "商品净含量：", "商品售价："]
+
+    for (i in goods.brand) {
+        x += "<h2>" + "商品品牌：" + goods.brand[i].name + "</h2>";
+        for (j in goods.brand[i].info) {
+            // 如果没有数据，则返回“||没找到数据||”
+            if (goods.brand[i].info[j] === null)
+                x += info[j] + "||没找到数据||" + "<br>";
+            // 如果有数据，则叠加x的值
+            else {
+                if (goods.brand[i].info[j] > 0 | goods.brand[i].info[j] < 99999)
+                    x += info[j] + goods.brand[i].info[j] + "g" + "<br>";
+                else
+                    x += info[j] + goods.brand[i].info[j] + "<br>";
+            }
         }
     }
     document.getElementById("example_1").innerHTML = x;
 }
+
