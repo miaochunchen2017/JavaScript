@@ -135,7 +135,7 @@ function cycle_array() {
 
 // 将Json数据转化为Javascript对象
 function practiceJson() {
-    var dsfs, i, x = "";
+    var dsfs, i, x, y = "";
     dsfs = {
         "name": "milk",
         "type": [
@@ -145,8 +145,10 @@ function practiceJson() {
         ]
     };
     for (i in dsfs.type) {
-        for (x in dsfs.type[i])
-            document.getElementById("example_2").innerHTML += dsfs.type[i][x] + "<br/>";
+        for (x in dsfs.type[i]){
+            y += dsfs.type[i][x] + "<br/>";
+        }
+        document.write(y+"<br/>");
     }
 
 }
