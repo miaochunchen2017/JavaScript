@@ -133,3 +133,20 @@ function cycle_array() {
     document.getElementById("example_1").innerHTML = x;
 }
 
+// 将Json数据转化为Javascript对象
+function practiceJson() {
+    var dsfs, i, x = "";
+    dsfs = {
+        "name": "milk",
+        "type": [
+            {"color": "white", "taste": "sweet", "price": "normal", "jjj": 111},
+            {"color": "blue", "taste": "bad", "price": "high", "jjj": 211},
+            {"color": "yellow", "taste": "sweet", "price": "cheap", "jjj": 311}
+        ]
+    };
+    for (i in dsfs.type) {
+        for (x in dsfs.type[i])
+            document.getElementById("example_2").innerHTML += dsfs.type[i][x] + "<br/>";
+    }
+
+}
