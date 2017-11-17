@@ -149,6 +149,20 @@ function practiceJson() {
             y += dsfs.type[i][x] + "<br/>";
         }
         document.write(y+"<br/>");
+        y=""
     }
 
+}
+
+//将Json文件解析为JavaScript对象
+function jsonToJavaScript(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if(this.readyState == 4 && this.status == 200){
+            myObj = JSON.parse(this.responseText);
+            document.getElementById("example_4").innerHTML = myObj.name;
+        }
+    };
+    xmlhttp.open("GET","resource/tsconfig.txt",true);
+    xmlhttp.send();
 }
