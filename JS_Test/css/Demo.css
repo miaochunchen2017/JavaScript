@@ -153,7 +153,13 @@ div#global {
 
 #content_menu {
     width: 18%;
-    height: auto;
+    height: 500px;
+    /*使控件固定在屏幕的指定位置上*/
+    position: fixed;
+    top: 170px;
+    left: 10px;
+    /*溢出元素可以使用滚动条进行浏览*/
+    overflow: scroll;
     /*定义浮动，不定义的话，界面会乱*/
     float: left;
     padding: 5px 1% 100px 1%;

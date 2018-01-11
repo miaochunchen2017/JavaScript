@@ -145,24 +145,42 @@ function practiceJson() {
         ]
     };
     for (i in dsfs.type) {
-        for (x in dsfs.type[i]){
+        for (x in dsfs.type[i]) {
             y += dsfs.type[i][x] + "<br/>";
         }
-        document.write(y+"<br/>");
-        y=""
+        document.write(y + "<br/>");
+        y = ""
     }
 
 }
 
 //将Json文件解析为JavaScript对象
-function jsonToJavaScript(){
+function jsonToJavaScript() {
+    var myObj;
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
-        if(this.readyState == 4 && this.status == 200){
-            myObj = JSON.parse(this.responseText);
-            document.getElementById("example_4").innerHTML = myObj.name;
+        if (this.readyState == 4 && this.status == 200) {
+            //启用 JSON.parse 的第二个参数 reviver，一个转换结果的函数，对象的每个成员调用此函数
+            myObj = JSON.parse(this.responseText, function (key, value) {
+                if (key == "initDate") {
+                    return new Date(value);
+                } else {
+                    return value;
+                }
+            });
+            //直接将字符串转换为 Date 对象
+            // myObj.initDate = new Date(myObj.initDate);
+            document.getElementById("example_4").innerHTML = myObj.name + " " + myObj.initDate;
         }
     };
-    xmlhttp.open("GET","resource/tsconfig.txt",true);
+    xmlhttp.open("GET", "resource/tsconfig.txt", true);
     xmlhttp.send();
+}
+
+//JSON 不允许包含函数，但你可以将函数作为字符串存储，之后再将字符串转换为函数
+function json_function() {
+    var text = '{ "name":"Runoob", "alexa":"function () {return 10000;}", "site":"www.runoob.com"}';
+    var obj = JSON.parse(text);
+    obj.alexa = eval("(" + obj.alexa + ")");
+    document.getElementById("example_5").innerHTML = obj.name + " Alexa 排名：" + obj.alexa();
 }
